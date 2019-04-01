@@ -1,12 +1,42 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <title>{% block title %}symfony{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="{{ path('main_home') }}">
+                <img src="{{ asset('img/logo.png') }}" alt="Logo BeerTime" />
+                BeerTime
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="{{ path('event_list') }}">acceuil/a>
+                    <a class="nav-item nav-link" href="{{ path('event_add') }}">products</a>
+               
+              <div class="user-area">
+                {% if app.user %}
+                    {{ app.user.username }} -
+                    <a href="{{ path('user_logout') }}" class="btn btn-primary">new</a>
+                {% else %}
+                    <a href="{{ path('user_login') }}" class="btn btn-primary">edit</a>
+                    <a href="{{ path('user_register') }}" class="btn btn-secondary">delete</a>
+                {% endif %}
+            </div>   
+        </nav>
+    
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+         <footer class="bg-dark text-light text-center py-3">
+            Tous droits reservés - {{ date()|date('Y') }}
+        </footer>
+        {% block javascripts %}
+        
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        {% endblock %}
     </body>
 </html>
