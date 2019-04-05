@@ -1,31 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ event.name }} - {{ parent() }}{% endblock %}
+{% block title %}Nos produits - {{ parent() }}{% endblock %}
 
 {% block body %}
-{% extends 'base.html.twig' %}
 
-{% block title %}{{ event.name }} - {{ parent() }}{% endblock %}
 
-{% block body %}
+
 <div class="product">
     <div class ="container">
         <div class="row">
             <div class="col-sm-12 col-lg-8 p-4">
                 <h2>nom</h2>
-                {{ product.name }}
+               
             </div>
             <div class="col-sm-12 col-lg-8 p-4">
                 <h2>Slug</h2>
-                {{ product.slug }}
+               
             </div>
             <div class="col-sm-12 col-lg-8 p-4">
                 <h2>Description</h2>
-                {{ product.description }}
+                
             </div>
             <div class="col-sm-12 col-lg-8 p-4">
                 <h2>prix</h2>
-                {{ product.price }}
+               
             </div>
         </div>
     </div>
