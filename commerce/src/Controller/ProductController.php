@@ -40,9 +40,9 @@ class ProductController extends AbstractController
             return $this->render( 'product/show.html.twig');
         } */
            /**
-     * @Route("/admin/product/new", name="products_new"
+     * @Route("/admin/product/", name="products_new"
      */
-    
+    /*
     public function new(){
         $ajust = new Ajust();
         $form = $this->createForm( NewType::class, $ajust );
@@ -61,6 +61,6 @@ class ProductController extends AbstractController
         return $this->render( 'products/new.html.twig', array(
             'form' => $form->createView(),
         ));
-    } 
+    } */
 } 
  
